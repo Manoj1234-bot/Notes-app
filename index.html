@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="header">
+    <h1>📝 Notes</h1>
+    <button id="themeToggle" title="Toggle dark mode">🌙</button>
+  </div>
+
+  <div class="search-row">
+    <input type="text" id="searchInput" placeholder="🔍 Search notes...">
+  </div>
+
+  <div class="toolbar-row">
+    <button id="newNoteBtn" class="new-note-btn">+ New Note</button>
+    <button id="exportAllBtn" class="icon-action-btn" title="Export all notes as backup file">⬇️ Export</button>
+    <label class="icon-action-btn import-label" title="Import notes from a backup file">
+      ⬆️ Import
+      <input type="file" id="importInput" accept=".json" hidden>
+    </label>
+  </div>
+
+  <div class="notes-grid" id="notesGrid"></div>
+
+  <p class="credit">Developed by <strong>Manoj S</strong></p>
+</div>
+
+<!-- ===== Note Editor Modal ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <input type="text" id="noteTitleInput" placeholder="Title" class="note-title-input">
+    <textarea id="noteContentInput" placeholder="Write your note..." class="note-content-input"></textarea>
+
+    <div class="color-picker" id="colorPicker">
+      <span class="color-dot" data-color="#fff9c4" style="background:#fff9c4"></span>
+      <span class="color-dot" data-color="#c8e6c9" style="background:#c8e6c9"></span>
+      <span class="color-dot" data-color="#bbdefb" style="background:#bbdefb"></span>
+      <span class="color-dot" data-color="#f8bbd0" style="background:#f8bbd0"></span>
+      <span class="color-dot" data-color="#e1bee7" style="background:#e1bee7"></span>
+      <span class="color-dot" data-color="#ffffff" style="background:#ffffff"></span>
+    </div>
+
+    <div class="modal-actions">
+      <button id="deleteNoteBtn" class="modal-btn danger">🗑️ Delete</button>
+      <button id="downloadTxtBtn" class="modal-btn">⬇️ .txt</button>
+      <button id="closeModalBtn" class="modal-btn">Cancel</button>
+      <button id="saveNoteBtn" class="modal-btn primary">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
